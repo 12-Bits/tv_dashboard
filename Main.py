@@ -31,7 +31,7 @@ st.markdown("Filtre os dados usando a barra lateral para visualizar séries por 
 st.markdown("Use a barra lateral acessar novas páginas.")
 
 
-st.markdown("Dataframe carregado: `data_TV.csv` de 'https://www.kaggle.com/datasets/bourdier/all-tv-series-details-dataset'" )
+st.markdown("Dataframe carregado: `data_TV.csv` de https://www.kaggle.com/datasets/bourdier/all-tv-series-details-dataset")
 
 
 # Exibe o DataFrame Puro
