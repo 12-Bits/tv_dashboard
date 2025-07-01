@@ -25,7 +25,6 @@ fig, ax = plt.subplots()
 sns.histplot(df_filtered["vote_average"], bins=20, ax=ax)
 st.pyplot(fig)
 
-st.markdown("Séries famosas são mais bem avaliadas.")
 
 st.subheader("Distribuição da Popularidade")
 fig, ax = plt.subplots()   
