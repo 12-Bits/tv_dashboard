@@ -3,17 +3,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
+from data_loader import load_data 
 
-@st.cache_data
-def load_data():
-    df = pd.read_csv("data\data_TV.csv")
-    df["first_air_date"] = pd.to_datetime(df["first_air_date"])
-    df["year"] = df["first_air_date"].dt.year
-    df = df[df["origin_country"] != "Unknown"]
 
-    return df
 
 df = load_data()
+df = df[df["origin_country"] != "Unknown"]
 
 # Sidebar - filtros
 st.sidebar.title("Filtros")
@@ -32,10 +27,14 @@ st.title("Dashboard de Séries de TV")
 
 st.subheader("Séries por País")
 country_count = df_filtered["origin_country"].value_counts().head(10)
+country_count = country_count.sort_values(ascending=True)  # Ordem decrescente no gráfico (barra maior no topo)
 st.bar_chart(country_count)
+#US é o maior produtor de séries, seguido por UK e Canada
+
 
 st.subheader("Séries por Idioma")
 lang_count = df_filtered["original_language"].value_counts().head(10)
+lang_count = lang_count.sort_values(ascending=True)
 st.bar_chart(lang_count)
 
 st.subheader("Número de Séries por Ano")

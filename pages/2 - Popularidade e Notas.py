@@ -3,18 +3,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
+from data_loader import load_data 
 
-@st.cache_data
-def load_data():
-    df = pd.read_csv("data\data_TV.csv")
-    df["first_air_date"] = pd.to_datetime(df["first_air_date"])
-    df["year"] = df["first_air_date"].dt.year
-    df = df[df["origin_country"] != "Unknown"]
 
-    return df
 
 df = load_data()
-
+df = df[df["origin_country"] != "Unknown"]
 # Sidebar - filtros
 st.sidebar.title("Filtros")
 selected_country = st.sidebar.multiselect("País de origem", sorted(df["origin_country"].unique()), default=df["origin_country"].unique())

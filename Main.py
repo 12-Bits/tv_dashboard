@@ -3,17 +3,11 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
+from data_loader import load_data
 
 st.set_page_config(page_title="Dashboard de Séries de TV", layout="wide")
 
-@st.cache_data
-def load_data():
-    df = pd.read_csv("data\data_TV.csv")
-    df["first_air_date"] = pd.to_datetime(df["first_air_date"])
-    df["year"] = df["first_air_date"].dt.year
-    df = df[df["origin_country"] != "Unknown"]
-    return df
-
+#Chama a função de carregamento de dados
 df = load_data()
 
 # Sidebar - filtros
@@ -37,5 +31,5 @@ st.markdown("Dataframe carregado: `data_TV.csv`")
 
 df = pd.read_csv("data\data_TV.csv")
 
-# Exibe o DataFrame formatado no Streamlit
+# Exibe o DataFrame Puro
 st.dataframe(df)
