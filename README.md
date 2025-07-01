@@ -11,7 +11,7 @@ pip install -r requirements.txt
 
 2. Execute o app:
 ```
-streamlit run app.py
+streamlit run Main.py
 ```
 
 ## Funcionalidades
