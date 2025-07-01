@@ -19,3 +19,8 @@ streamlit run Main.py
 - Gráficos interativos com Plotly.
 - Distribuições com Seaborn.
 - Múltiplas páginas para visualização.
+
+## Fontes
+- https://www.kaggle.com/datasets/titassaha/top-rated-tv-shows/
+
+
