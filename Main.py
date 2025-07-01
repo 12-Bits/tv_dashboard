@@ -29,7 +29,6 @@ st.title("Dashboard - Séries de TV")
 st.markdown("Este é um dashboard interativo para explorar dados de séries de TV.")
 st.markdown("Dataframe carregado: `data_TV.csv`")
 
-df = pd.read_csv("data\data_TV.csv")
 
 # Exibe o DataFrame Puro
 st.dataframe(df)
