@@ -26,7 +26,6 @@ st.subheader("Séries por País")
 country_count = df_filtered["origin_country"].value_counts().head(10)
 country_count = country_count.sort_values(ascending=True)  # Ordem decrescente no gráfico (barra maior no topo)
 st.bar_chart(country_count)
-#US é o maior produtor de séries, seguido por UK e Canada
 
 
 st.subheader("Séries por Idioma")
