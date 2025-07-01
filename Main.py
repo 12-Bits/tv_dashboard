@@ -28,8 +28,10 @@ st.sidebar.title("Navegação")
 st.title("Dashboard - Séries de TV")
 st.markdown("Este é um dashboard interativo para explorar dados de séries de TV.")
 st.markdown("Filtre os dados usando a barra lateral para visualizar séries por país de origem, idioma e ano de estreia.")
+st.markdown("Use a barra lateral acessar novas páginas.")
 
-st.markdown("Dataframe carregado: `data_TV.csv`")
+
+st.markdown("Dataframe carregado: `data_TV.csv` de 'https://www.kaggle.com/datasets/bourdier/all-tv-series-details-dataset'" )
 
 
 # Exibe o DataFrame Puro
