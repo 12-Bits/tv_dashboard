@@ -11,6 +11,7 @@ def load_data():
     df = pd.read_csv("data\data_TV.csv")
     df["first_air_date"] = pd.to_datetime(df["first_air_date"])
     df["year"] = df["first_air_date"].dt.year
+    df = df[df["origin_country"] != "Unknown"]
     return df
 
 df = load_data()
@@ -32,6 +33,7 @@ st.sidebar.title("Navegação")
 
 st.title("Dashboard - Séries de TV")
 st.markdown("Este é um dashboard interativo para explorar dados de séries de TV.")
+st.markdown("Dataframe carregado: `data_TV.csv`")
 
 df = pd.read_csv("data\data_TV.csv")
 

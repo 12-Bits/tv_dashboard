@@ -9,6 +9,8 @@ def load_data():
     df = pd.read_csv("data\data_TV.csv")
     df["first_air_date"] = pd.to_datetime(df["first_air_date"])
     df["year"] = df["first_air_date"].dt.year
+    df = df[df["origin_country"] != "Unknown"]
+
     return df
 
 df = load_data()
@@ -25,7 +27,6 @@ df_filtered = df[
     df["original_language"].isin(selected_language) &
     df["year"].between(selected_year[0], selected_year[1])
 ]
-
 st.title("Dashboard de Séries de TV")
 
 
