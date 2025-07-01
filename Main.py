@@ -27,6 +27,8 @@ st.sidebar.title("Navegação")
 
 st.title("Dashboard - Séries de TV")
 st.markdown("Este é um dashboard interativo para explorar dados de séries de TV.")
+st.markdown("Filtre os dados usando a barra lateral para visualizar séries por país de origem, idioma e ano de estreia.")
+
 st.markdown("Dataframe carregado: `data_TV.csv`")
 
 
