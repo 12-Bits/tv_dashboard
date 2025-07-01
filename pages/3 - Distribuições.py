@@ -1,12 +1,12 @@
 import streamlit as st
+import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
 from data_loader import load_data 
 
-
 df = load_data()
-df = df[df["origin_country"] != "Unknown"]
+
 # Sidebar - filtros
 st.sidebar.title("Filtros")
 selected_country = st.sidebar.multiselect("País de origem", sorted(df["origin_country"].unique()), default=df["origin_country"].unique())
@@ -27,5 +27,5 @@ st.pyplot(fig)
 
 st.subheader("Distribuição da Popularidade")
 fig, ax = plt.subplots()   
-sns.histplot(df_filtered["popularity"], bins=30)
-plt.xscale('log')
+sns.histplot(df_filtered["popularity"], bins=20, ax=ax)
+st.pyplot(fig)
