@@ -30,8 +30,3 @@ idioma = st.selectbox("Filtrar por idioma", df_filtered["original_language"].uni
 top_voted = df_filtered[df_filtered["original_language"] == idioma].sort_values("vote_count", ascending=False).head(10)
 fig2 = px.bar(top_voted, x="name", y="vote_count", title=f"Top 10 - Idioma {idioma}")
 st.plotly_chart(fig2, use_container_width=True)
-
-st.subheader("Top 10 Séries Mais Votadas (Geral)")
-top_voted = df_filtered[df_filtered["original_language"]
-fig2 = px.bar(top_voted, x="name", y="vote_count", title=f"Top 10")
-st.plotly_chart(fig2, use_container_width=True)
